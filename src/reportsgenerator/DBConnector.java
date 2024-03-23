@@ -32,5 +32,16 @@ public class DBConnector {
         }
     }
 
+    public String getDbUrl() {
+    return dbUrl;
+}
+
+public String getUser() {
+    return user;
+}
+
+public String getPassword() {
+    return password;
+}
 
 }
