@@ -78,4 +78,28 @@ public class ReportManager {
         }
     }
     
+    public static void generateLecturerReport(Connection conn, StringBuilder reportData) {
+        String sql = 
+            "SELECT l.Name AS LecturerName, l.Role, c.Name AS ModuleName, COUNT(e.StudentID) AS StudentCount, " +
+            "GROUP_CONCAT(DISTINCT c.Type) AS CourseTypes " +
+            "FROM Lecturers l " +
+            "LEFT JOIN Courses c ON l.LecturerID = c.LecturerID " +
+            "LEFT JOIN Enrollments e ON c.CourseID = e.CourseID " +
+            "GROUP BY l.LecturerID";
+
+        try (Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+            reportData.append("Lecturer Report:\n");
+            while (rs.next()) {
+                reportData.append("Lecturer Name: ").append(rs.getString("LecturerName"))
+                          .append(", Role: ").append(rs.getString("Role"))
+                          .append(", Teaching Module: ").append(rs.getString("ModuleName"))
+                          .append(", Number of Students in Module: ").append(rs.getInt("StudentCount"))
+                          .append(", Can Teach: ").append(rs.getString("CourseTypes")).append("\n");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error generating lecturer report:");
+        }
+    }
+    
 }
