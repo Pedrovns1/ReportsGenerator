@@ -81,11 +81,11 @@ public class ReportManager {
     public static void generateLecturerReport(Connection conn, StringBuilder reportData) {
         String sql =  
             "SELECT l.Name AS LecturerName, l.Role, c.Name AS ModuleName, COUNT(e.StudentID) AS StudentCount, " +
-            "GROUP_CONCAT(DISTINCT c.Type) AS CourseTypes " +
+            "GROUP_CONCAT(DISTINCT IFNULL(c.Program, 'Unknow')) AS CourseTypes " +
             "FROM Lecturers l " +
             "LEFT JOIN Courses c ON l.LecturerID = c.LecturerID " +
             "LEFT JOIN Enrollments e ON c.CourseID = e.CourseID " +
-            "GROUP BY l.LecturerID";
+            "GROUP BY l.LecturerID, c.Name";
 
         try (Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
