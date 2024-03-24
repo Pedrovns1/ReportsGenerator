@@ -22,7 +22,6 @@ public class ReportsGenerator {
     public static void main(String[] args) {
         Connection conn = ReportManager.connect(); // Establish the connection using the ReportManager
         Scanner scanner = new Scanner(System.in);
-        StringBuilder reportData = new StringBuilder();
         boolean running = true;
 
         while (running) {
