@@ -28,13 +28,13 @@ public class ReportsGenerator {
 
             switch (option) {
                 case 1:
-                    generateReport(conn, ReportType.COURSE, reportData);
+                    generateAndExportReport(conn, ReportType.COURSE);
                     break;
                 case 2:
-                    generateReport(conn, ReportType.STUDENT, reportData);
+                    generateAndExportReport(conn, ReportType.STUDENT);
                     break;
                 case 3:
-                    generateReport(conn, ReportType.LECTURER, reportData);
+                    generateAndExportReport(conn, ReportType.LECTURER);
                     break;
                 case 4:
                     System.out.println("Exiting program.");
@@ -57,4 +57,32 @@ public class ReportsGenerator {
         System.out.print("Enter option: ");
     }
     
+    private static void generateAndExportReport(Connection conn, ReportType type) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Generating " + type + " Report...");
+        StringBuilder reportData = new StringBuilder();
+        
+        switch (type) {
+            case COURSE:
+                ReportManager.generateCourseReport(conn, reportData);
+                break;
+            case STUDENT:
+                ReportManager.generateStudentReport(conn, reportData);
+                break;
+            case LECTURER:
+                ReportManager.generateLecturerReport(conn, reportData);
+                break;
+        }
+        
+        System.out.println("Do you want to export the report? (Y/N)");
+        String exportOption = scanner.next();
+        
+        if (exportOption.equalsIgnoreCase("Y")) {
+            exportReport(reportData); // Variable "exportReportMethod"
+        } else {
+            System.out.println("Report not exported.");
+        }
+    }
+    
+  
 }
