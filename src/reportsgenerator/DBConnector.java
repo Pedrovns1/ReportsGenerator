@@ -33,15 +33,15 @@ public class DBConnector {
     }
 
     public String getDbUrl() {
-    return dbUrl;
-}
+        return dbUrl;
+    }
 
-public String getUser() {
-    return user;
-}
+    public String getUser() {
+        return user;
+    }
 
-public String getPassword() {
-    return password;
-}
+    public String getPassword() {
+        return password;
+    }
 
 }

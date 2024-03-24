@@ -46,10 +46,10 @@ public class ReportsGenerator {
                     System.out.println("Invalid option. Please try again.");
             }
         }
-        
+
         scanner.close();
     }
-    
+
     private static void MainMenu() {
         System.out.println("\nChoose the report you want to generate:");
         System.out.println("1. Course Report");
@@ -58,12 +58,12 @@ public class ReportsGenerator {
         System.out.println("4. Exit");
         System.out.print("Enter option: ");
     }
-    
+
     private static void generateAndExportReport(Connection conn, ReportType type) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Generating " + type + " Report...");
         StringBuilder reportData = new StringBuilder();
-        
+
         switch (type) {
             case COURSE:
                 ReportManager.generateCourseReport(conn, reportData);
@@ -75,18 +75,18 @@ public class ReportsGenerator {
                 ReportManager.generateLecturerReport(conn, reportData);
                 break;
         }
-        
+
         System.out.println("Do you want to export the report? (Y/N)");
         String exportOption = scanner.next();
-        
+
         if (exportOption.equalsIgnoreCase("Y")) {
             exportReport(reportData); // Variable "exportReportMethod"
         } else {
             System.out.println("Report not exported.");
         }
     }
-    
-      private static void exportReport(StringBuilder reportData) {
+
+    private static void exportReport(StringBuilder reportData) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Select output format:");
         System.out.println("1. Console");
@@ -105,28 +105,28 @@ public class ReportsGenerator {
                 exportToCSV(reportData, "Report.csv");
                 break;
             default:
-                System.out.println("Invalid format option.");               
+                System.out.println("Invalid format option.");
                 break;
         }
     }
-    
+
     private static void exportToTxt(StringBuilder reportData, String fileName) {
-    try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName + ".txt"))) {
-        writer.write(reportData.toString());
-        System.out.println("Report exported to " + fileName + ".csv");
-    } catch (IOException e) {
-        System.out.println("Error exporting report to CSV file: " + e.getMessage());
+        try ( BufferedWriter writer = new BufferedWriter(new FileWriter(fileName + ".txt"))) {
+            writer.write(reportData.toString());
+            System.out.println("Report exported to " + fileName + ".csv");
+        } catch (IOException e) {
+            System.out.println("Error exporting report to CSV file: " + e.getMessage());
+        }
     }
-}
 
     private static void exportToCSV(StringBuilder reportData, String fileName) {
-    try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName + ".csv"))) {
-        writer.write(reportData.toString());
-        System.out.println("Report exported to " + fileName + ".csv");
-    } catch (IOException e) {
-        System.out.println("Error exporting report to CSV file: " + e.getMessage());
+        try ( BufferedWriter writer = new BufferedWriter(new FileWriter(fileName + ".csv"))) {
+            writer.write(reportData.toString());
+            System.out.println("Report exported to " + fileName + ".csv");
+        } catch (IOException e) {
+            System.out.println("Error exporting report to CSV file: " + e.getMessage());
+        }
     }
-}
 
     enum ReportType {
         COURSE, STUDENT, LECTURER
