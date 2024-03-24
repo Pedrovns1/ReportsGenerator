@@ -4,6 +4,9 @@
  */
 package reportsgenerator;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.Connection;
 import java.util.Scanner;
 
@@ -108,12 +111,24 @@ public class ReportsGenerator {
         }
     }
     
-    private static void exportToTxt(StringBuilder reportData) {
-        
+    private static void exportToTxt(StringBuilder reportData, String fileName) {
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName + ".txt"))) {
+        writer.write(reportData.toString());
+        System.out.println("Report exported to " + fileName + ".csv");
+    } catch (IOException e) {
+        System.out.println("Error exporting report to CSV file: " + e.getMessage());
     }
-    private static void exportToCSV(StringBuilder reportData) {
-       
+}
+
+    private static void exportToCSV(StringBuilder reportData, String fileName) {
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName + ".csv"))) {
+        writer.write(reportData.toString());
+        System.out.println("Report exported to " + fileName + ".csv");
+    } catch (IOException e) {
+        System.out.println("Error exporting report to CSV file: " + e.getMessage());
     }
+}
+
     enum ReportType {
         COURSE, STUDENT, LECTURER
     }
