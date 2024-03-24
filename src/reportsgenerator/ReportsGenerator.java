@@ -84,5 +84,37 @@ public class ReportsGenerator {
         }
     }
     
-  
+      private static void exportReport(StringBuilder reportData) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Select output format:");
+        System.out.println("1. Console");
+        System.out.println("2. TXT file");
+        System.out.println("3. CSV file");
+        int formatOption = scanner.nextInt();
+
+        switch (formatOption) {
+            case 1:
+                System.out.println(reportData.toString());
+                break;
+            case 2:
+                exportToTxt(reportData, "Report.txt");
+                break;
+            case 3:
+                exportToCSV(reportData, "Report.csv");
+                break;
+            default:
+                System.out.println("Invalid format option.");               
+                break;
+        }
+    }
+    
+    private static void exportToTxt(StringBuilder reportData) {
+        
+    }
+    private static void exportToCSV(StringBuilder reportData) {
+       
+    }
+    enum ReportType {
+        COURSE, STUDENT, LECTURER
+    }
 }
