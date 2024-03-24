@@ -27,9 +27,7 @@ public class ReportManager {
         }
     }
     public static void generateCourseReport(Connection conn, StringBuilder reportData) {
-        String userData = "USE IEE;";
-        String sql = 
-            userData +    
+        String sql =    
             "SELECT c.Name AS ModuleName, c.Program, COUNT(e.StudentID) AS StudentCount, " +
             "l.Name AS LecturerName, COALESCE(c.Room, 'online') AS Room " +
             "FROM Courses c " +
@@ -52,10 +50,8 @@ public class ReportManager {
         }
     }
     
-    public static void generateStudentReport(Connection conn, StringBuilder reportData) {
-        String userData = "USE IEE;";
-        String sql = 
-            userData +    
+    public static void generateStudentReport(Connection conn, StringBuilder reportData) {       
+        String sql =                
             "SELECT s.Name AS StudentName, s.StudentID, s.Program, " +
             "GROUP_CONCAT(DISTINCT CASE WHEN g.Status = 'In Progress' THEN c.Name END) AS EnrolledModules, " +
             "GROUP_CONCAT(DISTINCT CASE WHEN g.Status = 'Passed' THEN CONCAT(c.Name, ' (Grade: ', g.Score, ')') END) AS CompletedModules, " +
@@ -83,9 +79,7 @@ public class ReportManager {
     }
     
     public static void generateLecturerReport(Connection conn, StringBuilder reportData) {
-        String userData = "USE IEE;";
-        String sql = 
-            userData +   
+        String sql =  
             "SELECT l.Name AS LecturerName, l.Role, c.Name AS ModuleName, COUNT(e.StudentID) AS StudentCount, " +
             "GROUP_CONCAT(DISTINCT c.Type) AS CourseTypes " +
             "FROM Lecturers l " +
