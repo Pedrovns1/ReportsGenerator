@@ -47,7 +47,35 @@ public class ReportManager {
             }
         } catch (SQLException e) {
             System.out.println("Error generating course report:");
-            e.printStackTrace();
         }
     }
+    
+    public static void generateStudentReport(Connection conn, StringBuilder reportData) {
+        String sql = 
+            "SELECT s.Name AS StudentName, s.StudentID, s.Program, " +
+            "GROUP_CONCAT(DISTINCT CASE WHEN g.Status = 'In Progress' THEN c.Name END) AS EnrolledModules, " +
+            "GROUP_CONCAT(DISTINCT CASE WHEN g.Status = 'Passed' THEN CONCAT(c.Name, ' (Grade: ', g.Score, ')') END) AS CompletedModules, " +
+            "GROUP_CONCAT(DISTINCT CASE WHEN g.Status = 'Failed' THEN c.Name END) AS RepeatModules " +
+            "FROM Students s " +
+            "LEFT JOIN Enrollments e ON s.StudentID = e.StudentID " +
+            "LEFT JOIN Courses c ON e.CourseID = c.CourseID " +
+            "LEFT JOIN Grades g ON e.EnrollmentID = g.EnrollmentID " +
+            "GROUP BY s.StudentID";
+
+        try (Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+            reportData.append("Student Report:\n");
+            while (rs.next()) {
+                reportData.append("Student Name: ").append(rs.getString("StudentName"))
+                          .append(", Student Number: ").append(rs.getString("StudentID"))
+                          .append(", Programme: ").append(rs.getString("Program"))
+                          .append(", Currently Enrolled Modules: ").append(rs.getString("EnrolledModules"))
+                          .append(", Completed Modules (with Grades): ").append(rs.getString("CompletedModules"))
+                          .append(", Modules to Repeat: ").append(rs.getString("RepeatModules")).append("\n");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error generating student report:");
+        }
+    }
+    
 }
