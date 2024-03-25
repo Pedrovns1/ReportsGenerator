@@ -71,5 +71,13 @@ public class Admin extends User {
     // Add the updated user back into the map
     users.put(newUsername, oldUser);
     System.out.println("User's details updated successfully: " + newUsername);
-  }
+  }  
+      public void deleteUser(Map<String, User> users, String username) {
+        if (!users.containsKey(username)) {
+            System.out.println("User does not exist.");
+            return;
+        }
+        users.remove(username);
+        System.out.println("User deleted successfully: " + username);
+    }
 }
