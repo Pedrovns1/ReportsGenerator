@@ -8,6 +8,13 @@ package reportsgenerator;
  *
  * @author peuvi
  */
-public class Lecturer {
-    
+public class Lecturer extends User {
+    public Lecturer(String username, String password) {
+        super(username, password, UserRole.LECTURER);
+    }
+
+    @Override
+    public void generateReport() {
+        System.out.println("Lecturer generating lecturer-specific report.");
+    }
 }
