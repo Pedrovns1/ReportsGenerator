@@ -8,6 +8,13 @@ package reportsgenerator;
  *
  * @author peuvi
  */
-public class Office {
-    
+public class Office extends User {
+    public Office(String username, String password) {
+        super(username, password, UserRole.OFFICE);
+    }
+
+    @Override
+    public void generateReport() {
+        System.out.println("Office user generating all types of reports.");
+    }
 }
