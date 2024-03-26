@@ -22,13 +22,12 @@ public class ReportsGenerator {
      * @param args the command line arguments
      */
     
-     private static final Map<String, User> users = new HashMap<>();
+    private static final Map<String, User> users = new HashMap<>();
 
     static {
         // It will ensure the only user available at the start is the Admin
         users.put("admin", new Admin("admin", "java"));
     }
-    
     public static void main(String[] args) {
         Connection conn = ReportManager.connect(); // Establish the connection using the ReportManager
         Scanner scanner = new Scanner(System.in);
@@ -41,31 +40,91 @@ public class ReportsGenerator {
             return;
         }
         System.out.println("Login successful. Welcome, " + currentUser.getUsername() + "!");
-        
+        // Loop to keep the program running until the user decides to exit
         while (running) {
-            MainMenu(); // Shows the main menu
-            int option = scanner.nextInt();
-
-            switch (option) {
-                case 1:
-                    generateAndExportReport(conn, ReportType.COURSE);
-                    break;
-                case 2:
-                    generateAndExportReport(conn, ReportType.STUDENT);
-                    break;
-                case 3:
-                    generateAndExportReport(conn, ReportType.LECTURER);
-                    break;
-                case 4:
-                    System.out.println("Exiting program.");
-                    running = false;
-                    break;
-                default:
-                    System.out.println("Invalid option. Please try again.");
+            // Check if the current user is an admin
+            if (currentUser instanceof Admin) {
+                // Admin menu options
+                System.out.println("\nAdmin Menu:");
+                System.out.println("1. Add User");
+                System.out.println("2. Modify User");
+                System.out.println("3. Delete User");
+                System.out.println("4. Change Credentials");
+                System.out.println("5. Exit");
+                System.out.print("Enter option: ");
+                int choice = scanner.nextInt();
+                switch (choice) {
+                    case 1: // Add new user
+                        System.out.println("Enter username, password, and role (ADMIN/OFFICE/LECTURER) for the new user:");
+                        String US = scanner.next(); 
+                        String PW = scanner.next();
+                        String RO = scanner.next();
+                        UserRole newRole = UserRole.valueOf(RO.toUpperCase());
+                        ((Admin) currentUser).addUser(users, US, PW, newRole);
+                        break;
+                    case 2: // Modify existing user
+                        System.out.println("Enter old username, new username, new password, and new role (ADMIN/OFFICE/LECTURER):");
+                        String OUS = scanner.next();
+                        String NUS = scanner.next();
+                        String NPW = scanner.next();
+                        String NRO = scanner.next();
+                        UserRole nrRole = UserRole.valueOf(NRO.toUpperCase());
+                        ((Admin) currentUser).modifyUser(users, OUS, NUS, NPW, nrRole);
+                        break;
+                    case 3: // Delete user
+                        System.out.println("Enter the username of the user you wish to delete:");
+                        String DUS = scanner.next();
+                        ((Admin) currentUser).deleteUser(users, DUS);
+                        break;
+                    case 4:  // Change credentials
+                        System.out.println("Enter new username and new password:");
+                        String NUUsername = scanner.next();
+                        String NUPassword = scanner.next();
+                        currentUser.changeCredentials(NUUsername, NUPassword);
+                        break;
+                    case 5: // Exit program
+                        System.out.println("Exiting program.");
+                        running = false;
+                        break;
+                    default:
+                        System.out.println("Invalid option. Please try again.");
+                        break;
+                }
+            } else {
+                // General user menu for generating reports
+                MainMenu();
+                int reportOption = scanner.nextInt();
+                switch (reportOption) {
+                    case 1: // Generate course report
+                        if (!(currentUser instanceof Lecturer)) { // Only non-lecturers can generate course and student reports
+                            generateAndExportReport(conn, ReportType.COURSE);
+                        } else {
+                            System.out.println("Unauthorized to generate this report.");
+                        }
+                        break;
+                    case 2: // Generate student report
+                        if (!(currentUser instanceof Lecturer)) { // Only non-lecturers can generate course and student reports
+                            generateAndExportReport(conn, ReportType.STUDENT);
+                        } else {
+                            System.out.println("Unauthorized to generate this report.");
+                        }
+                        break;
+                    case 3: // Generate lecturer report
+                        // All users including Lecturers can generate lecturer reports, but Lecturers can generate only their own
+                        generateAndExportReport(conn, ReportType.LECTURER);
+                        break;
+                    case 4: // Exit program
+                        System.out.println("Exiting program.");
+                        running = false;
+                        break;
+                    default:
+                        System.out.println("Invalid option. Please try again.");
+                        break;
+                }
             }
-        }
 
-        scanner.close();
+            scanner.close();
+        }
     }
 
     private static void MainMenu() {
