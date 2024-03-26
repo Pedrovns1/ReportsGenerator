@@ -1,0 +1,151 @@
+Course Report:
+Module Name: Introduction to Programming, Programme: Business, Enrolled Students: 1, Lecturer: William Martinez, Room: Online
+Module Name: Introduction to Programming, Programme: Physics, Enrolled Students: 1, Lecturer: Jennifer Davis, Room: 101A
+Module Name: Organic Chemistry, Programme: Engineering, Enrolled Students: 0, Lecturer: Charles Martinez, Room: 101A
+Module Name: Organic Chemistry, Programme: History, Enrolled Students: 1, Lecturer: Karen Johnson, Room: 103A
+Module Name: Microeconomics, Programme: Biology, Enrolled Students: 2, Lecturer: Mary Johnson, Room: 102A
+Module Name: Physics 101, Programme: Computer Science, Enrolled Students: 0, Lecturer: Thomas Martinez, Room: 102B
+Module Name: Microeconomics, Programme: Engineering, Enrolled Students: 1, Lecturer: James Williams, Room: 102B
+Module Name: Introduction to Programming, Programme: Chemistry, Enrolled Students: 1, Lecturer: Joseph Lopez, Room: 103A
+Module Name: Introduction to Programming, Programme: English Literature, Enrolled Students: 0, Lecturer: Thomas Martinez, Room: 101B
+Module Name: Literature and Composition, Programme: History, Enrolled Students: 0, Lecturer: David Williams, Room: 102A
+Module Name: Organic Chemistry, Programme: Art, Enrolled Students: 1, Lecturer: Charles Anderson, Room: 101A
+Module Name: Advanced Mathematics, Programme: Engineering, Enrolled Students: 2, Lecturer: Barbara Moore, Room: 102A
+Module Name: Literature and Composition, Programme: Business, Enrolled Students: 0, Lecturer: Jennifer Johnson, Room: 102A
+Module Name: Microeconomics, Programme: Engineering, Enrolled Students: 2, Lecturer: Charles Hernandez, Room: 101B
+Module Name: Organic Chemistry, Programme: Engineering, Enrolled Students: 2, Lecturer: Linda Garcia, Room: 102B
+Module Name: Microeconomics, Programme: English Literature, Enrolled Students: 1, Lecturer: Charles Rodriguez, Room: 101A
+Module Name: Organic Chemistry, Programme: Mathematics, Enrolled Students: 1, Lecturer: Karen Jones, Room: 101A
+Module Name: Statistics, Programme: Mathematics, Enrolled Students: 3, Lecturer: Barbara Moore, Room: 102A
+Module Name: Introduction to Programming, Programme: Physics, Enrolled Students: 1, Lecturer: Sarah Taylor, Room: 101A
+Module Name: World History, Programme: Engineering, Enrolled Students: 1, Lecturer: Barbara Anderson, Room: 101B
+Module Name: Organic Chemistry, Programme: Biology, Enrolled Students: 1, Lecturer: William Miller, Room: 102A
+Module Name: Organic Chemistry, Programme: English Literature, Enrolled Students: 0, Lecturer: Charles Hernandez, Room: Online
+Module Name: Macroeconomics, Programme: Engineering, Enrolled Students: 0, Lecturer: Robert Smith, Room: 101A
+Module Name: Physics 101, Programme: Physics, Enrolled Students: 2, Lecturer: Barbara Gonzalez, Room: 102A
+Module Name: Statistics, Programme: Engineering, Enrolled Students: 1, Lecturer: Richard Davis, Room: 102B
+Module Name: Microeconomics, Programme: Biology, Enrolled Students: 1, Lecturer: William Rodriguez, Room: 102A
+Module Name: Physics 101, Programme: English Literature, Enrolled Students: 1, Lecturer: Charles Jackson, Room: 103A
+Module Name: World History, Programme: Art, Enrolled Students: 2, Lecturer: Barbara Hernandez, Room: 101B
+Module Name: Physics 101, Programme: Physics, Enrolled Students: 1, Lecturer: Joseph Martinez, Room: 102A
+Module Name: Advanced Mathematics, Programme: English Literature, Enrolled Students: 0, Lecturer: James Davis, Room: 102A
+Module Name: Microeconomics, Programme: Chemistry, Enrolled Students: 1, Lecturer: Mary Moore, Room: Online
+Module Name: Microeconomics, Programme: Engineering, Enrolled Students: 2, Lecturer: Sarah Thomas, Room: 102A
+Module Name: Literature and Composition, Programme: Physics, Enrolled Students: 1, Lecturer: Barbara Thomas, Room: 101B
+Module Name: Organic Chemistry, Programme: Engineering, Enrolled Students: 2, Lecturer: Joseph Rodriguez, Room: 102B
+Module Name: Linear Algebra, Programme: Chemistry, Enrolled Students: 0, Lecturer: Charles Martinez, Room: Online
+Module Name: Advanced Mathematics, Programme: Physics, Enrolled Students: 0, Lecturer: Michael Martin, Room: Online
+Module Name: Literature and Composition, Programme: Business, Enrolled Students: 1, Lecturer: Barbara Moore, Room: Online
+Module Name: Macroeconomics, Programme: Business, Enrolled Students: 1, Lecturer: Sarah Taylor, Room: Online
+Module Name: World History, Programme: Biology, Enrolled Students: 2, Lecturer: James Thomas, Room: 102A
+Module Name: Advanced Mathematics, Programme: English Literature, Enrolled Students: 3, Lecturer: Karen Thomas, Room: 101A
+Module Name: Macroeconomics, Programme: History, Enrolled Students: 2, Lecturer: Jennifer Davis, Room: 102B
+Module Name: World History, Programme: Physics, Enrolled Students: 0, Lecturer: Elizabeth Taylor, Room: Online
+Module Name: Microeconomics, Programme: Business, Enrolled Students: 1, Lecturer: Susan Taylor, Room: 102B
+Module Name: Organic Chemistry, Programme: Chemistry, Enrolled Students: 1, Lecturer: David Moore, Room: 101A
+Module Name: Physics 101, Programme: Computer Science, Enrolled Students: 2, Lecturer: James Williams, Room: 101B
+Module Name: Advanced Mathematics, Programme: Computer Science, Enrolled Students: 5, Lecturer: Linda Martin, Room: Online
+Module Name: Introduction to Programming, Programme: Biology, Enrolled Students: 0, Lecturer: Joseph Lopez, Room: 102B
+Module Name: Statistics, Programme: Biology, Enrolled Students: 1, Lecturer: Charles Anderson, Room: 102A
+Module Name: Microeconomics, Programme: Art, Enrolled Students: 0, Lecturer: William Martinez, Room: 101A
+Module Name: Advanced Mathematics, Programme: History, Enrolled Students: 1, Lecturer: Richard Williams, Room: 102B
+Module Name: Advanced Mathematics, Programme: Art, Enrolled Students: 1, Lecturer: Patricia Martinez, Room: Online
+Module Name: Macroeconomics, Programme: Physics, Enrolled Students: 1, Lecturer: David Wilson, Room: 101B
+Module Name: Advanced Mathematics, Programme: English Literature, Enrolled Students: 2, Lecturer: Patricia Martin, Room: 101B
+Module Name: Microeconomics, Programme: Mathematics, Enrolled Students: 0, Lecturer: Joseph Rodriguez, Room: 103A
+Module Name: Literature and Composition, Programme: History, Enrolled Students: 0, Lecturer: Karen Johnson, Room: 102B
+Module Name: Organic Chemistry, Programme: Biology, Enrolled Students: 0, Lecturer: Karen Garcia, Room: 101B
+Module Name: Physics 101, Programme: History, Enrolled Students: 2, Lecturer: Mary Thomas, Room: 102A
+Module Name: Statistics, Programme: English Literature, Enrolled Students: 2, Lecturer: Robert Miller, Room: 101A
+Module Name: Organic Chemistry, Programme: History, Enrolled Students: 1, Lecturer: John Wilson, Room: 103A
+Module Name: Advanced Mathematics, Programme: History, Enrolled Students: 1, Lecturer: Elizabeth Jones, Room: Online
+Module Name: Physics 101, Programme: Engineering, Enrolled Students: 1, Lecturer: Thomas Martinez, Room: 102B
+Module Name: World History, Programme: Engineering, Enrolled Students: 0, Lecturer: Barbara Hernandez, Room: 102B
+Module Name: Literature and Composition, Programme: Computer Science, Enrolled Students: 2, Lecturer: David Williams, Room: Online
+Module Name: Microeconomics, Programme: Biology, Enrolled Students: 0, Lecturer: Joseph Rodriguez, Room: Online
+Module Name: Advanced Mathematics, Programme: Art, Enrolled Students: 1, Lecturer: Jennifer Johnson, Room: Online
+Module Name: Physics 101, Programme: Biology, Enrolled Students: 0, Lecturer: David Moore, Room: Online
+Module Name: Physics 101, Programme: History, Enrolled Students: 0, Lecturer: Jessica Jones, Room: 101A
+Module Name: Statistics, Programme: Chemistry, Enrolled Students: 2, Lecturer: Patricia Martinez, Room: 102A
+Module Name: Organic Chemistry, Programme: Biology, Enrolled Students: 1, Lecturer: Michael Lopez, Room: 102B
+Module Name: Statistics, Programme: Chemistry, Enrolled Students: 1, Lecturer: William Martin, Room: 103A
+Module Name: Statistics, Programme: Biology, Enrolled Students: 1, Lecturer: Jessica Davis, Room: 101A
+Module Name: Linear Algebra, Programme: Art, Enrolled Students: 3, Lecturer: Sarah Martin, Room: 101B
+Module Name: Literature and Composition, Programme: Chemistry, Enrolled Students: 1, Lecturer: Karen Martin, Room: 102B
+Module Name: Organic Chemistry, Programme: Mathematics, Enrolled Students: 1, Lecturer: Joseph Miller, Room: 103A
+Module Name: Advanced Mathematics, Programme: Biology, Enrolled Students: 1, Lecturer: Susan Rodriguez, Room: 101A
+Module Name: Linear Algebra, Programme: History, Enrolled Students: 3, Lecturer: Linda Hernandez, Room: 103A
+Module Name: Microeconomics, Programme: Art, Enrolled Students: 0, Lecturer: Charles Hernandez, Room: Online
+Module Name: Introduction to Programming, Programme: Chemistry, Enrolled Students: 1, Lecturer: Barbara Anderson, Room: 102B
+Module Name: Literature and Composition, Programme: Mathematics, Enrolled Students: 2, Lecturer: Barbara Gonzalez, Room: 101A
+Module Name: Literature and Composition, Programme: Mathematics, Enrolled Students: 0, Lecturer: Linda Garcia, Room: 102B
+Module Name: Linear Algebra, Programme: Physics, Enrolled Students: 2, Lecturer: Mary Smith, Room: 103A
+Module Name: Physics 101, Programme: Business, Enrolled Students: 1, Lecturer: Robert Moore, Room: 102B
+Module Name: Macroeconomics, Programme: History, Enrolled Students: 0, Lecturer: Karen Gonzalez, Room: Online
+Module Name: Physics 101, Programme: Physics, Enrolled Students: 0, Lecturer: Susan Martinez, Room: 101A
+Module Name: Linear Algebra, Programme: Computer Science, Enrolled Students: 1, Lecturer: Karen Johnson, Room: Online
+Module Name: Statistics, Programme: English Literature, Enrolled Students: 1, Lecturer: David Davis, Room: Online
+Module Name: Linear Algebra, Programme: Business, Enrolled Students: 1, Lecturer: Mary Davis, Room: 101A
+Module Name: Physics 101, Programme: Engineering, Enrolled Students: 1, Lecturer: Jennifer Taylor, Room: 101A
+Module Name: Physics 101, Programme: Biology, Enrolled Students: 1, Lecturer: Sarah Brown, Room: 102B
+Module Name: Literature and Composition, Programme: Biology, Enrolled Students: 1, Lecturer: Karen Moore, Room: 102B
+Module Name: Statistics, Programme: History, Enrolled Students: 2, Lecturer: William Miller, Room: 102B
+Module Name: Linear Algebra, Programme: Chemistry, Enrolled Students: 1, Lecturer: William Wilson, Room: Online
+Module Name: Physics 101, Programme: Physics, Enrolled Students: 1, Lecturer: Jennifer Johnson, Room: 102B
+Module Name: Physics 101, Programme: Computer Science, Enrolled Students: 1, Lecturer: Joseph Hernandez, Room: 102A
+Module Name: Linear Algebra, Programme: History, Enrolled Students: 1, Lecturer: Mary Davis, Room: 102B
+Module Name: Statistics, Programme: Engineering, Enrolled Students: 0, Lecturer: Richard Taylor, Room: Online
+Module Name: Physics 101, Programme: History, Enrolled Students: 1, Lecturer: Robert Smith, Room: 103A
+Module Name: Advanced Mathematics, Programme: Art, Enrolled Students: 1, Lecturer: Elizabeth Jones, Room: 101B
+Module Name: World History, Programme: Physics, Enrolled Students: 0, Lecturer: Karen Johnson, Room: Online
+Module Name: Linear Algebra, Programme: English Literature, Enrolled Students: 0, Lecturer: Karen Johnson, Room: 102A
+Module Name: Microeconomics, Programme: Art, Enrolled Students: 1, Lecturer: Susan Gonzalez, Room: 103A
+Module Name: World History, Programme: Biology, Enrolled Students: 1, Lecturer: James Davis, Room: 103A
+Module Name: Microeconomics, Programme: Biology, Enrolled Students: 0, Lecturer: Linda Wilson, Room: 101A
+Module Name: World History, Programme: Chemistry, Enrolled Students: 0, Lecturer: Michael Jones, Room: 102B
+Module Name: Advanced Mathematics, Programme: Engineering, Enrolled Students: 1, Lecturer: Michael Jones, Room: 101A
+Module Name: Statistics, Programme: Chemistry, Enrolled Students: 1, Lecturer: David Williams, Room: 102A
+Module Name: Physics 101, Programme: Physics, Enrolled Students: 1, Lecturer: Karen Johnson, Room: 101A
+Module Name: Organic Chemistry, Programme: Biology, Enrolled Students: 0, Lecturer: Thomas Martinez, Room: 103A
+Module Name: Microeconomics, Programme: Chemistry, Enrolled Students: 1, Lecturer: Susan Martinez, Room: 101A
+Module Name: Advanced Mathematics, Programme: Engineering, Enrolled Students: 2, Lecturer: William Miller, Room: 103A
+Module Name: Physics 101, Programme: Business, Enrolled Students: 1, Lecturer: Charles Moore, Room: 101A
+Module Name: Literature and Composition, Programme: Biology, Enrolled Students: 0, Lecturer: Karen Gonzalez, Room: 101B
+Module Name: Literature and Composition, Programme: Physics, Enrolled Students: 1, Lecturer: James Williams, Room: Online
+Module Name: World History, Programme: English Literature, Enrolled Students: 0, Lecturer: Michael Garcia, Room: 101A
+Module Name: Literature and Composition, Programme: English Literature, Enrolled Students: 3, Lecturer: Charles Anderson, Room: Online
+Module Name: Macroeconomics, Programme: Chemistry, Enrolled Students: 1, Lecturer: Mary Davis, Room: 102B
+Module Name: Organic Chemistry, Programme: History, Enrolled Students: 2, Lecturer: David Anderson, Room: 103A
+Module Name: Macroeconomics, Programme: Art, Enrolled Students: 0, Lecturer: Thomas Brown, Room: 101A
+Module Name: Microeconomics, Programme: Chemistry, Enrolled Students: 0, Lecturer: Karen Jones, Room: 102A
+Module Name: Linear Algebra, Programme: Business, Enrolled Students: 0, Lecturer: Joseph Hernandez, Room: 102A
+Module Name: Introduction to Programming, Programme: History, Enrolled Students: 1, Lecturer: Michael Jones, Room: 102B
+Module Name: Advanced Mathematics, Programme: Biology, Enrolled Students: 1, Lecturer: Patricia Taylor, Room: 102A
+Module Name: Statistics, Programme: Computer Science, Enrolled Students: 0, Lecturer: Susan Martinez, Room: 102B
+Module Name: Macroeconomics, Programme: Mathematics, Enrolled Students: 0, Lecturer: Mary Anderson, Room: 101A
+Module Name: Macroeconomics, Programme: Chemistry, Enrolled Students: 2, Lecturer: Michael Jackson, Room: 101B
+Module Name: Organic Chemistry, Programme: English Literature, Enrolled Students: 2, Lecturer: Charles Martinez, Room: 101B
+Module Name: Linear Algebra, Programme: Biology, Enrolled Students: 2, Lecturer: Jennifer Davis, Room: 102A
+Module Name: Advanced Mathematics, Programme: Biology, Enrolled Students: 2, Lecturer: Karen Moore, Room: 102B
+Module Name: Macroeconomics, Programme: Chemistry, Enrolled Students: 3, Lecturer: John Rodriguez, Room: 103A
+Module Name: Introduction to Programming, Programme: Business, Enrolled Students: 3, Lecturer: Barbara Gonzalez, Room: 103A
+Module Name: World History, Programme: Computer Science, Enrolled Students: 0, Lecturer: William Jackson, Room: 101B
+Module Name: Literature and Composition, Programme: Chemistry, Enrolled Students: 2, Lecturer: Michael Jones, Room: 101B
+Module Name: World History, Programme: Mathematics, Enrolled Students: 1, Lecturer: Joseph Miller, Room: 101A
+Module Name: World History, Programme: History, Enrolled Students: 1, Lecturer: Patricia Lopez, Room: 101B
+Module Name: Macroeconomics, Programme: Mathematics, Enrolled Students: 2, Lecturer: Joseph Rodriguez, Room: 101B
+Module Name: Physics 101, Programme: Business, Enrolled Students: 0, Lecturer: Joseph Hernandez, Room: 102A
+Module Name: Literature and Composition, Programme: Physics, Enrolled Students: 0, Lecturer: Charles Martinez, Room: 103A
+Module Name: Linear Algebra, Programme: Art, Enrolled Students: 1, Lecturer: Jessica Jones, Room: 102B
+Module Name: World History, Programme: Chemistry, Enrolled Students: 0, Lecturer: Susan Garcia, Room: Online
+Module Name: Microeconomics, Programme: Chemistry, Enrolled Students: 0, Lecturer: Joseph Martinez, Room: Online
+Module Name: Literature and Composition, Programme: Biology, Enrolled Students: 2, Lecturer: Patricia Brown, Room: 103A
+Module Name: Statistics, Programme: English Literature, Enrolled Students: 0, Lecturer: Michael Garcia, Room: Online
+Module Name: Microeconomics, Programme: History, Enrolled Students: 2, Lecturer: Thomas Martinez, Room: 102A
+Module Name: Statistics, Programme: English Literature, Enrolled Students: 0, Lecturer: Susan Martinez, Room: Online
+Module Name: Introduction to Programming, Programme: Physics, Enrolled Students: 2, Lecturer: David Jackson, Room: 101B
+Module Name: Advanced Mathematics, Programme: Biology, Enrolled Students: 0, Lecturer: Mary Smith, Room: 102B
+Module Name: Introduction to Programming, Programme: Chemistry, Enrolled Students: 0, Lecturer: Michael Jackson, Room: 101B
+Module Name: Literature and Composition, Programme: Business, Enrolled Students: 0, Lecturer: Elizabeth Lopez, Room: 102A
+Module Name: Statistics, Programme: Chemistry, Enrolled Students: 0, Lecturer: John Brown, Room: 103A
+Module Name: Organic Chemistry, Programme: Computer Science, Enrolled Students: 1, Lecturer: Michael Garcia, Room: 102A
