@@ -4,9 +4,6 @@
  */
 package reportsgenerator;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.Map;
 
 /**
@@ -23,46 +20,64 @@ public class Admin extends User {
         System.out.println("Admins cannot generate reports.");
     }
 
-   
+    public void addUser(Map<String, User> users, String username, String password, UserRole role) {
+        if (users.containsKey(username)) {
+            System.out.println("User already exists.");
+            return;
+        }
+        switch (role) {
+            case ADMIN:
+                users.put(username, new Admin(username, password));
+                break;
+            case OFFICE:
+                users.put(username, new Office(username, password));
+                break;
+            case LECTURER:
+                users.put(username, new Lecturer(username, password));
+                break;
+        }
+        System.out.println("User added successfully: " + username);
+    }
+    public void modifyUser(Map<String, User> users, String oldUsername, String newUsername, String newPassword, UserRole newRole) {
+    if (!users.containsKey(oldUsername)) {
+        System.out.println("User does not exist on the system.");
+        return;
+    }
+    // Check if new username is already taken by another user
+    if (!oldUsername.equals(newUsername) && users.containsKey(newUsername)) {
+        System.out.println("New username already exists on the system. Please choose a unique username.");
+        return;
+    }  
+    // Remove the old user entry
+    User oldUser = users.remove(oldUsername);
 
-    public void addUser(Connection conn, String username, String password, UserRole role) {
-        try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO Users (Username, Password, Role) VALUES (?, ?, ?)")) {
-            stmt.setString(1, username);
-            stmt.setString(2, password); // Use senha hash na prática.
-            stmt.setString(3, role.name());
-            int rowsAffected = stmt.executeUpdate();
-            if (rowsAffected > 0) {
-                System.out.println("User added successfully: " + username);
-            }
-        } catch (SQLException e) {
-            System.out.println("An error occurred while adding the user: " + e.getMessage());
+    // Update the user details
+    oldUser.setUsername(newUsername);
+    oldUser.setPassword(newPassword);
+     
+    if (oldUser.getRole() != newRole) {
+        switch (newRole) {
+            case ADMIN:
+                oldUser = new Admin(newUsername, newPassword);
+                break;
+            case OFFICE:
+                oldUser = new Office(newUsername, newPassword);
+                break;
+            case LECTURER:
+                oldUser = new Lecturer(newUsername, newPassword);
+                break;
         }
     }
-
-    public void modifyUser(Connection conn, String oldUsername, String newUsername, String newPassword, UserRole newRole) {
-        try (PreparedStatement stmt = conn.prepareStatement("UPDATE Users SET Username = ?, Password = ?, Role = ? WHERE Username = ?")) {
-            stmt.setString(1, newUsername);
-            stmt.setString(2, newPassword); // Use senha hash na prática.
-            stmt.setString(3, newRole.name());
-            stmt.setString(4, oldUsername);
-            int rowsAffected = stmt.executeUpdate();
-            if (rowsAffected > 0) {
-                System.out.println("User's details updated successfully: " + newUsername);
-            }
-        } catch (SQLException e) {
-            System.out.println("An error occurred while updating the user: " + e.getMessage());
+    // Add the updated user back into the map
+    users.put(newUsername, oldUser);
+    System.out.println("User's details updated successfully: " + newUsername);
+  }  
+      public void deleteUser(Map<String, User> users, String username) {
+        if (!users.containsKey(username)) {
+            System.out.println("User does not exist.");
+            return;
         }
-    }
-
-    public void deleteUser(Connection conn, String username) {
-        try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM Users WHERE Username = ?")) {
-            stmt.setString(1, username);
-            int rowsAffected = stmt.executeUpdate();
-            if (rowsAffected > 0) {
-                System.out.println("User deleted successfully: " + username);
-            }
-        } catch (SQLException e) {
-            System.out.println("An error occurred while deleting the user: " + e.getMessage());
-        }
+        users.remove(username);
+        System.out.println("User deleted successfully: " + username);
     }
 }
