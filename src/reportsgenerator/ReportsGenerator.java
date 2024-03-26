@@ -21,13 +21,13 @@ public class ReportsGenerator {
     /**
      * @param args the command line arguments
      */
-    
     private static final Map<String, User> users = new HashMap<>();
 
     static {
         // It will ensure the only user available at the start is the Admin
         users.put("admin", new Admin("admin", "java"));
     }
+
     public static void main(String[] args) {
         Connection conn = ReportManager.connect(); // Establish the connection using the ReportManager
         Scanner scanner = new Scanner(System.in);
@@ -55,14 +55,21 @@ public class ReportsGenerator {
                 int choice = scanner.nextInt();
                 switch (choice) {
                     case 1: // Add new user
+                        try {
                         System.out.println("Enter username, password, and role (ADMIN/OFFICE/LECTURER) for the new user:");
-                        String US = scanner.next(); 
+                        String US = scanner.next();
                         String PW = scanner.next();
                         String RO = scanner.next();
                         UserRole newRole = UserRole.valueOf(RO.toUpperCase());
                         ((Admin) currentUser).addUser(users, US, PW, newRole);
-                        break;
+                    } catch (IllegalArgumentException e) {
+                        System.out.println("Invalid role specified. Please enter one of the following roles: ADMIN, OFFICE, LECTURER.");
+                    } catch (Exception e) {
+                        System.out.println("An error occurred while adding the user: " + e.getMessage());
+                    }
+                    break;
                     case 2: // Modify existing user
+                        try {
                         System.out.println("Enter old username, new username, new password, and new role (ADMIN/OFFICE/LECTURER):");
                         String OUS = scanner.next();
                         String NUS = scanner.next();
@@ -70,7 +77,12 @@ public class ReportsGenerator {
                         String NRO = scanner.next();
                         UserRole nrRole = UserRole.valueOf(NRO.toUpperCase());
                         ((Admin) currentUser).modifyUser(users, OUS, NUS, NPW, nrRole);
-                        break;
+                    } catch (IllegalArgumentException e) {
+                        System.out.println("Invalid role specified. Please enter one of the following roles: ADMIN, OFFICE, LECTURER.");
+                    } catch (Exception e) {
+                        System.out.println("An error occurred while modifying the user: " + e.getMessage());
+                    }
+                    break;
                     case 3: // Delete user
                         System.out.println("Enter the username of the user you wish to delete:");
                         String DUS = scanner.next();
@@ -122,9 +134,25 @@ public class ReportsGenerator {
                         break;
                 }
             }
-
-            scanner.close();
+            System.out.println("Do you want to log out? (Y/N)");
+            String logoutOption = scanner.next();
+            if (logoutOption.equalsIgnoreCase("Y")) {
+                System.out.println("Logging out...");
+                currentUser = logout();
+                if (currentUser == null) {
+                    System.out.println("Logout successful. Exiting program.");
+                    running = false;
+                } else {
+                    System.out.println("Login successful. Welcome, " + currentUser.getUsername() + "!");
+                }
+            }
         }
+        scanner.close();
+    }
+
+    private static User logout() {
+        System.out.println("Please log in with another user.");
+        return UserAuthenticator.authenticateUser(users);
     }
 
     private static void MainMenu() {
