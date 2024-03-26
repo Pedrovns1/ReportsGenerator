@@ -8,6 +8,8 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.Connection;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -19,11 +21,27 @@ public class ReportsGenerator {
     /**
      * @param args the command line arguments
      */
+    
+     private static final Map<String, User> users = new HashMap<>();
+
+    static {
+        // It will ensure the only user available at the start is the Admin
+        users.put("admin", new Admin("admin", "java"));
+    }
+    
     public static void main(String[] args) {
         Connection conn = ReportManager.connect(); // Establish the connection using the ReportManager
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
 
+        System.out.println("Welcome to the Reports Generator. Please log in.");
+        User currentUser = UserAuthenticator.authenticateUser(users);
+        if (currentUser == null) {
+            System.out.println("Authentication failed. Exiting program.");
+            return;
+        }
+        System.out.println("Login successful. Welcome, " + currentUser.getUsername() + "!");
+        
         while (running) {
             MainMenu(); // Shows the main menu
             int option = scanner.nextInt();
