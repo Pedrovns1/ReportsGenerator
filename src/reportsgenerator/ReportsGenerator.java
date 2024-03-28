@@ -16,11 +16,16 @@ import java.util.Scanner;
  *
  * @author peuvi
  */
+
+/**
+ * GITHUB: https://github.com/Pedrovns1/ReportsGenerator
+ */
 public class ReportsGenerator {
 
     /**
      * @param args the command line arguments
      */
+    // A static Map to hold users, keyed by users
     private static final Map<String, User> users = new HashMap<>();
 
     static {
@@ -33,17 +38,18 @@ public class ReportsGenerator {
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
 
-        System.out.println("Welcome to the Reports Generator. Please log in.");
+        System.out.println("Welcome to the Reports Generator. Please, use Admin log in.");
         User currentUser = UserAuthenticator.authenticateUser(users);
         if (currentUser == null) {
             System.out.println("Authentication failed. Exiting program.");
+            System.out.println("Admin is the only user available at the start");
             return;
         }
         System.out.println("Login successful. Welcome, " + currentUser.getUsername() + "!");
         // Loop to keep the program running until the user decides to exit
         while (running) {
             // Check if the current user is an admin
-            if (currentUser instanceof Admin) {
+            if (currentUser instanceof Admin) { // Admin-specific functionality
                 // Admin menu options
                 System.out.println("\nAdmin Menu:");
                 System.out.println("1. Add User");
@@ -99,10 +105,10 @@ public class ReportsGenerator {
                         running = false;
                         break;
                     default:
-                        System.out.println("Invalid option. Please try again.");
+                        System.out.println("Invalid option. Please try again, choose from options 1 to 5");
                         break;
                 }
-            } else {
+            } else { // General user functionality
                 // General user menu for generating reports
                 MainMenu();
                 int reportOption = scanner.nextInt();
@@ -112,6 +118,7 @@ public class ReportsGenerator {
                             generateAndExportReport(conn, ReportType.COURSE);
                         } else {
                             System.out.println("Unauthorized to generate this report.");
+                            System.out.println("Lecturers are only allowed to generate lecturer reports");
                         }
                         break;
                     case 2: // Generate student report
@@ -119,6 +126,7 @@ public class ReportsGenerator {
                             generateAndExportReport(conn, ReportType.STUDENT);
                         } else {
                             System.out.println("Unauthorized to generate this report.");
+                            System.out.println("Lecturers are only allowed to generate lecturer reports");
                         }
                         break;
                     case 3: // Generate lecturer report
@@ -130,10 +138,11 @@ public class ReportsGenerator {
                         running = false;
                         break;
                     default:
-                        System.out.println("Invalid option. Please try again.");
+                        System.out.println("Invalid option. Please try again, choose from options 1 to 4");
                         break;
                 }
             }
+            // Logout option
             System.out.println("Do you want to log out? (Y/N)");
             String logoutOption = scanner.next();
             if (logoutOption.equalsIgnoreCase("Y")) {
@@ -147,14 +156,17 @@ public class ReportsGenerator {
                 }
             }
         }
-        scanner.close();
+        scanner.close(); // Closes the scanner to prevent resource leak
     }
 
+    // Method for logging out and authenticating as another user
     private static User logout() {
         System.out.println("Please log in with another user.");
+        System.out.println("If you want to exit the program, please type in 'exit', 'exit'");
         return UserAuthenticator.authenticateUser(users);
     }
 
+    // Display the main menu for report generation
     private static void MainMenu() {
         System.out.println("\nChoose the report you want to generate:");
         System.out.println("1. Course Report");
@@ -164,6 +176,7 @@ public class ReportsGenerator {
         System.out.print("Enter option: ");
     }
 
+    // Method to handle report generation and export based on user selection
     private static void generateAndExportReport(Connection conn, ReportType type) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Generating " + type + " Report...");
@@ -191,6 +204,7 @@ public class ReportsGenerator {
         }
     }
 
+    // Method for exporting report data to various formats
     private static void exportReport(StringBuilder reportData) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Select output format:");
@@ -210,11 +224,12 @@ public class ReportsGenerator {
                 exportToCSV(reportData, "Report.csv");
                 break;
             default:
-                System.out.println("Invalid format option.");
+                System.out.println("Invalid format option. Please try again, choose from options 1 to 3");
                 break;
         }
     }
 
+    // Method for exporting report to a TXT file
     private static void exportToTxt(StringBuilder reportData, String fileName) {
         try ( BufferedWriter writer = new BufferedWriter(new FileWriter(fileName + ".txt"))) {
             writer.write(reportData.toString());
@@ -224,6 +239,7 @@ public class ReportsGenerator {
         }
     }
 
+    // Method for exporting report to a CSV file
     private static void exportToCSV(StringBuilder reportData, String fileName) {
         try ( BufferedWriter writer = new BufferedWriter(new FileWriter(fileName + ".csv"))) {
             writer.write(reportData.toString());
@@ -233,6 +249,7 @@ public class ReportsGenerator {
         }
     }
 
+    // Enum for defining different types of reports
     enum ReportType {
         COURSE, STUDENT, LECTURER
     }
